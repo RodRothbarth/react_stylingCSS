@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { Button, ControledDiv, CustomInput } from "./styleAuthComponents.jsx";
+import {
+  Button,
+  ControledDiv,
+  CustomInput,
+  InputTW,
+} from "./styleAuthComponents.jsx";
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -38,6 +43,7 @@ export default function AuthInputs() {
             handleInputChange("password", event.target.value)
           }
         />
+        <InputTW invalid={emailNotValid} label="test" />
         {/*<p>*/}
         {/*  <Label $invalid={passwordNotValid}>Password</Label>{" "}*/}
         {/*  /!*<--- conditionaly adding css*!/*/}
