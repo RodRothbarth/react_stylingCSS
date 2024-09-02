@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CustomInput, { Button, ControledDiv } from "./styleAuthComponents.jsx";
+import { Button, ControledDiv, CustomInput } from "./styleAuthComponents.jsx";
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -54,9 +54,10 @@ export default function AuthInputs() {
         <button type="button" className="text-button">
           Create a new account
         </button>
-        <Button className="button" onClick={handleLogin}>
-          Sign In
-        </Button>
+        <Button onClick={handleLogin}>Sign in</Button>
+        {/*<Button className="button" onClick={handleLogin}>*/}
+        {/*  Sign In*/}
+        {/*</Button>*/}
       </div>
     </div>
   );
