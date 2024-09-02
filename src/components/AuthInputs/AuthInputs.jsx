@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import {ControledDiv, Input, Label} from "./styleAuthComponents.js";
+import { useState } from "react";
+import { Button, ControledDiv, Input, Label } from "./styleAuthComponents.js";
 
 export default function AuthInputs() {
-  const [enteredEmail, setEnteredEmail] = useState('');
-  const [enteredPassword, setEnteredPassword] = useState('');
+  const [enteredEmail, setEnteredEmail] = useState("");
+  const [enteredPassword, setEnteredPassword] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   function handleInputChange(identifier, value) {
-    if (identifier === 'email') {
+    if (identifier === "email") {
       setEnteredEmail(value);
     } else {
       setEnteredPassword(value);
@@ -18,7 +18,7 @@ export default function AuthInputs() {
     setSubmitted(true);
   }
 
-  const emailNotValid = submitted && !enteredEmail.includes('@');
+  const emailNotValid = submitted && !enteredEmail.includes("@");
   const passwordNotValid = submitted && enteredPassword.trim().length < 6;
 
   return (
@@ -27,20 +27,21 @@ export default function AuthInputs() {
         <p>
           <Label $invalid={emailNotValid}>Email</Label>
           <Input
-              $invalid={emailNotValid}
+            $invalid={emailNotValid}
             type="email"
             // style={{backgroundColor: emailNotValid? '#fed2d2':'#d1d5db'}}
             // className={emailNotValid ? 'invalid' : undefined} //<--- this has to be undefined
-            onChange={(event) => handleInputChange('email', event.target.value)}
+            onChange={(event) => handleInputChange("email", event.target.value)}
           />
         </p>
         <p>
-         <Label $invalid={passwordNotValid}>Password</Label>  {/*<--- conditionaly adding css*/}
+          <Label $invalid={passwordNotValid}>Password</Label>{" "}
+          {/*<--- conditionaly adding css*/}
           <Input
-              $invalid={passwordNotValid}
+            $invalid={passwordNotValid}
             type="password"
             onChange={(event) =>
-              handleInputChange('password', event.target.value)
+              handleInputChange("password", event.target.value)
             }
           />
         </p>
@@ -49,7 +50,9 @@ export default function AuthInputs() {
         <button type="button" className="text-button">
           Create a new account
         </button>
-        <button className='button' onClick={handleLogin}>Sign In</button>
+        <Button className="button" onClick={handleLogin}>
+          Sign In
+        </Button>
       </div>
     </div>
   );
