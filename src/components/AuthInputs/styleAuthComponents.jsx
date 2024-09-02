@@ -43,3 +43,12 @@ export const Button = styled.button`
     background-color: #f0920e;
   }
 `;
+
+export default function CustomInput({ label, invalid, ...props }) {
+  return (
+    <p>
+      <Label $invalid={invalid}>{label}</Label>
+      <Input $invalid={invalid} {...props} />
+    </p>
+  );
+}
