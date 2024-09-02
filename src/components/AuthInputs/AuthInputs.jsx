@@ -25,9 +25,9 @@ export default function AuthInputs() {
     <div id="auth-inputs">
       <ControledDiv>
         <p>
-          <Label invalid={emailNotValid}>Email</Label>
+          <Label $invalid={emailNotValid}>Email</Label>
           <Input
-              invalid={emailNotValid}
+              $invalid={emailNotValid}
             type="email"
             // style={{backgroundColor: emailNotValid? '#fed2d2':'#d1d5db'}}
             // className={emailNotValid ? 'invalid' : undefined} //<--- this has to be undefined
@@ -35,9 +35,9 @@ export default function AuthInputs() {
           />
         </p>
         <p>
-         <Label invalid={passwordNotValid}>Password</Label>  {/*<--- conditionaly adding css*/}
+         <Label $invalid={passwordNotValid}>Password</Label>  {/*<--- conditionaly adding css*/}
           <Input
-              invalid={passwordNotValid}
+              $invalid={passwordNotValid}
             type="password"
             onChange={(event) =>
               handleInputChange('password', event.target.value)
