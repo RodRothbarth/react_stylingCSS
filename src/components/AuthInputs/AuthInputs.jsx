@@ -25,19 +25,20 @@ export default function AuthInputs() {
     <div id="auth-inputs">
       <ControledDiv>
         <p>
-          <Label className={`label ${emailNotValid ? 'invalid':''}`}>Email</Label>
+          <Label invalid={emailNotValid}>Email</Label>
           <Input
+              invalid={emailNotValid}
             type="email"
             // style={{backgroundColor: emailNotValid? '#fed2d2':'#d1d5db'}}
-            className={emailNotValid ? 'invalid' : undefined} //<--- this has to be undefined
+            // className={emailNotValid ? 'invalid' : undefined} //<--- this has to be undefined
             onChange={(event) => handleInputChange('email', event.target.value)}
           />
         </p>
         <p>
-         <Label className={`label ${emailNotValid ? 'invalid':''}`}>Password</Label>  {/*<--- conditionaly adding css*/}
+         <Label invalid={passwordNotValid}>Password</Label>  {/*<--- conditionaly adding css*/}
           <Input
+              invalid={passwordNotValid}
             type="password"
-            className={passwordNotValid ? 'invalid' : undefined}
             onChange={(event) =>
               handleInputChange('password', event.target.value)
             }
